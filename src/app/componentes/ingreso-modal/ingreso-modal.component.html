@@ -1,0 +1,10 @@
+<h5>Descripcion</h5>
+<input type="text" pInputText [(ngModel)]="descripcion"> 
+
+<div class="p-field p-col-12 p-md-3">
+    <label for="locale-us">Monto</label>
+    <p-inputNumber [(ngModel)]="monto" inputId="locale-us" mode="decimal" locale="en-US" [maxFractionDigits]="0">
+    </p-inputNumber>
+</div>
+
+<p-button label="Submit" (click)="crearIngreso()"></p-button>

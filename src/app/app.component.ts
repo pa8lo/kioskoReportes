@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  ingresoModal = false
   title = 'kioskoReportes';
+
+  showDialog() {
+    this.ingresoModal = true;
+}
 }

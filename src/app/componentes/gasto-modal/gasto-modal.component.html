@@ -1,0 +1,49 @@
+<div style="height: 50vh;  "class="p-col-16">
+    <div class="p-field p-col-12 p-md-3">
+        <p-dropdown [options]="tipo_gasto" [(ngModel)]="selectedTipo" optionLabel="code" [filter]="true" filterBy="descripcion"
+        [showClear]="true" placeholder="Seleccionar Tipo de gasto">
+            <ng-template pTemplate="selectedTipo">
+            <div class="country-item country-item-value" *ngIf="selectedTipo">
+             <div>{{selectedTipo.descripcion}}</div> 
+            </div>
+            </ng-template>
+            <ng-template let-tipo pTemplate="item">
+                <div class="country-item">
+                 <div>{{tipo.descripcion}}</div>
+            </div>
+            </ng-template>
+        </p-dropdown>
+    </div>  
+    <div class="country-item country-item-value" *ngIf="selectedTipo">
+        <div>{{selectedTipo.descripcion}}</div> 
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+        <p-dropdown [options]="proveedores" [(ngModel)]="selectedProveedor" optionLabel="code" [filter]="true" filterBy="descripcion"
+        [showClear]="true" placeholder="Seleccionar Prooveedor">
+            <ng-template pTemplate="selectedItem">
+            <div class="country-item country-item-value" *ngIf="selectedProveedor">
+            <div>{{selectedProveedor.descripcion}}</div>
+            </div>
+            </ng-template>
+            <ng-template let-tipo pTemplate="item">
+            <div class="country-item">
+            <div>{{tipo.descripcion}}</div>
+            </div>
+            </ng-template>
+        </p-dropdown>
+    </div>  
+    <div class="country-item country-item-value" *ngIf="selectedTipo">
+        <div>{{selectedTipo.descripcion}}</div> 
+       </div>
+
+    <h5>Descripcion</h5>
+    <input type="text" pInputText [(ngModel)]="descripcion"> 
+
+    <div class="p-field p-col-12 p-md-3">
+        <label for="locale-us">Monto</label>
+        <p-inputNumber [(ngModel)]="monto" inputId="locale-us" mode="decimal" locale="en-US" [maxFractionDigits]="0">
+        </p-inputNumber>
+    </div>
+
+    <p-button label="Submit" (click)="crearGasto()"></p-button>
+</div>
